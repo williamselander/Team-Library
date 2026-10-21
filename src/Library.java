@@ -1,4 +1,4 @@
-import java.awt.print.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,19 +7,23 @@ public class Library {
 
     public Library() {}
 
-    public void addBook(){
+    public void addBook(String title, String author, int year){
+
+
 
     }
 
-    public List<?> listBooks() {
-
+    public List<Book> listBooks() {
+        return List.copyOf(bookList);
     }
 
-    public void borrowBook(){
-
+    public void borrowBook(String title){
+        var book = bookList.stream().findFirst(b -> b.title.equalsIgnoreCase(isbn.trim())).orElseThrow(() -> new IllegalStateException("Boken finns ej att låna"))
     }
 
-    public void returnBook(){
+    public void returnBook(int isbn){
+
+
 
     }
 
